@@ -3,22 +3,47 @@ export default class Rotor {
     private outputChars: readonly string[];
     private weight: number;
     private traformationCounter: number = 1;
+
     constructor(inputChars: ReadonlyArray<string>, outputChars: ReadonlyArray<string>, weight: number = 0) {
         this.inputChars = inputChars;
         this.outputChars = outputChars;
         this.weight = weight;
     }
-    trasform(position: number): number {
+    forwardTrasform(position: number): number {
+        const inputChar = this.inputChars[position];
+        const outputPosition = this.outputChars.indexOf(inputChar);
 
-        const charInput = this.inputChars[position];
-        const resultPosition = this.outputChars.indexOf(charInput);
+        //console.log(`inputChar[${position}]=`, inputChar, `outputChars[${outputPosition}]=`, this.outputChars[outputPosition], `outputPosition:`, outputPosition);
+        //console.log('rotor forward:', this.weight)
+        console.log(' '.repeat(position) + '|');
+        console.log(this.inputChars.join(''));
+        console.log(this.outputChars.join(''));
+        console.log(' '.repeat(outputPosition) + '|');
+        return outputPosition;
+    }
 
+
+    backwardsTrasform(position: number): number {
+        const inputChar = this.outputChars[position];
+        const outputPosition =  this.inputChars.indexOf(inputChar);
+
+        //console.log('rotor backwards:', this.weight)      
+        //console.log(`outputChars[${position}]=`, inputChar, `inputChars[${outputPosition}]=`, this.inputChars[outputPosition], `outputPosition:`, outputPosition);
+        
+
+        console.log(' '.repeat(position) + '|');
+        console.log(this.outputChars.join(''));
+        console.log(this.inputChars.join(''));
+        console.log(' '.repeat(outputPosition) + '|');
+
+        return outputPosition;
+    }
+
+    rotate() {
         this.traformationCounter++;        
         if ((this.traformationCounter % (26 ** this.weight)) === 0) {
             this.moveRotor();
         }
-
-        return resultPosition;
     }
 
     private moveRotor() {

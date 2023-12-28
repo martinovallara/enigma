@@ -1,0 +1,34 @@
+==========================
+input: C
+  |
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+HXFQLENVZPAYJKMSBIOGCRUTWD
+                    |
+                    |
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+HXFQLENVZPAYJKMSBIOGCRUTWD
+                      |
+                      |
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+HXFQLENVZPAYJKMSBIOGCRUTWD
+                        |
+--------------------------
+Reflector forward:
+                        |
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+HXFQLENVZPAYJKMSBIOGCRUTWD
+           |
+           |
+HXFQLENVZPAYJKMSBIOGCRUTWD
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                        |
+                        |
+HXFQLENVZPAYJKMSBIOGCRUTWD
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                      |
+                      |
+HXFQLENVZPAYJKMSBIOGCRUTWD
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                    |
+encoded: U
+==========================
