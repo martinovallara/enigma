@@ -1,4 +1,4 @@
-import factoryEnigma, { randomicChars } from "./factory-enigma.js";
+import factoryEnigma, { randomicChars } from "@App/factory-enigma.js";
 
 const outputChars = randomicChars();
 const encodeEnigma = factoryEnigma(outputChars);

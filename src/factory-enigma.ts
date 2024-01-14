@@ -1,7 +1,7 @@
-import Enigma from "./enigma.js";
-import InvolutiveMapping from "./involutive-mapping.js";
-import Reflector from "./reflector.js";
-import Rotor from "./rotor.js";
+import Enigma from "@App/enigma.js";
+import InvolutiveMapping from "@App/involutive-mapping.js";
+import Reflector from "@App/reflector.js";
+import Rotor from "@App/rotor.js";
 
 export default function factoryEnigma(outputChars: string[]) {
     const inputChars = [...orderChars()];

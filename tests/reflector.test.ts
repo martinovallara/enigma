@@ -1,4 +1,5 @@
-import Reflector from '../src/reflector';
+import Reflector from "@App/reflector.js";
+
 
 const ascendingChars = [...Array(26).keys()].map((ascii) => String.fromCharCode(ascii + 65));
 const descendingChars = [...Array(26).keys()].map((ascii) => String.fromCharCode(ascii + 65)).reverse();

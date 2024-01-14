@@ -1,3 +1,5 @@
+import logger from "@App/event-occurred.js";
+
 export default class Reflector {
 
     inputChars: readonly string[];
@@ -10,17 +12,12 @@ export default class Reflector {
         const inputChar = this.inputChars[position];
         const outputPosition = this.outputChars.indexOf(inputChar);
 
+        const inputChars = this.inputChars;
+        const outputChars = this.outputChars;
 
-        // console.log(`inputChar[${position}]=`, inputChar, `outputChars[${outputPosition}]=`, this.outputChars[outputPosition], `outputPosition:`, outputPosition);
-
-        console.log('-'.repeat(26))
-        console.log('Reflector forward:')
-        console.log(' '.repeat(position) + '|');
-        console.log(this.inputChars.join(''));
-        console.log(this.outputChars.join(''));
-        console.log(' '.repeat(outputPosition) + '|');
+        logger.reflectionOccurred(position, inputChars, outputChars, outputPosition);
 
         return outputPosition;
     }
-
 }
+

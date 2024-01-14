@@ -1,7 +1,5 @@
-import Reflector from "./reflector.js";
-import Rotor from "./rotor.js";
-
-
+import Reflector from "@App/reflector.js";
+import Rotor from "@App/rotor.js";
 export default class Enigma {
 
     rotor1: Rotor;
@@ -21,14 +19,12 @@ export default class Enigma {
         return outputChars.join('');
     }
     private encodeChar(input: string) {
-        console.log('input:', input);
         const inputPosition = this.charToPosition(input);
 
         const rotor1Position = this.rotor1.forwardTrasform(inputPosition);
         const rotor2Position = this.rotor2.forwardTrasform(rotor1Position);
         const rotor3Position = this.rotor3.forwardTrasform(rotor2Position);
         const reflectorPosition1 = this.reflector.reflect(rotor3Position);
-        //const reflectorPosition2 = this.reflector.backwardsTrasform(reflectorPosition1);
         const rotor3Position2 = this.rotor3.backwardsTrasform(reflectorPosition1);
         const rotor2Position2 = this.rotor2.backwardsTrasform(rotor3Position2);
         const rotor1Position2 = this.rotor1.backwardsTrasform(rotor2Position2);

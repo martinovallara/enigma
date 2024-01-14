@@ -1,4 +1,4 @@
-import Rotor from '../src/rotor';
+import Rotor from '@App/rotor.js';
 
 const ascendingChars = [...Array(26).keys()].map((ascii) => String.fromCharCode(ascii + 65));
 const descendingChars = [...Array(26).keys()].map((ascii) => String.fromCharCode(ascii + 65)).reverse();
